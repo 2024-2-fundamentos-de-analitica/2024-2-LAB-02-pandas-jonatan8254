@@ -5,12 +5,19 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
-
-def pregunta_01():
-    """
+"""
     ¿Cuál es la cantidad de filas en la tabla `tbl0.tsv`?
 
     Rta/
     40
 
     """
+import pandas as pd
+
+def pregunta_01():
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+    return df.shape[0]
+
+# Ejemplo de uso:
+if __name__ == "__main__":
+    print(pregunta_01())  # Se espera que imprima 40
